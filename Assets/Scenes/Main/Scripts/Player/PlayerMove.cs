@@ -9,6 +9,7 @@ namespace SJ22
     {
         [SerializeField] GameTime time;
         [SerializeField] GameInputReader inputReader;
+        [SerializeField] ScreenProperties screenProperties;
         [SerializeField] float speed;
 
         Rigidbody2D rb;
@@ -24,6 +25,22 @@ namespace SJ22
         void Update()
         {
             transform.localPosition += time.DeltaTime * (Vector3) moveDirection * speed;
+
+            // clamp transform so that it does not go outside of screen
+            // we subtract 1 because that is the width/height of the player
+            transform.localPosition = new Vector3(
+                Mathf.Clamp(
+                    transform.localPosition.x, 
+                    -(screenProperties.Width - 1)/2, 
+                    (screenProperties.Width - 1)/2
+                ),
+                Mathf.Clamp(
+                    transform.localPosition.y, 
+                    -(screenProperties.Height - 1)/2, 
+                    (screenProperties.Height - 1)/2
+                ),
+                transform.localPosition.z
+            );
         }
     }
 }

@@ -23,7 +23,7 @@ namespace SJ22
 
         void Update()
         {
-            transform.position += time.DeltaTime * (Vector3) moveDirection * speed;
+            transform.localPosition += time.DeltaTime * (Vector3) moveDirection * speed;
         }
     }
 }

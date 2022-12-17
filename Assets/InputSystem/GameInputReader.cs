@@ -33,14 +33,38 @@ namespace SJ22
     [CreateAssetMenu(fileName = "InputReader", menuName = "Input Reader", order = 0)]
     public class GameInputReader : ScriptableObject
     {
-        public GameplayInputReader Gameplay;
+        [NonSerialized] public GameplayInputReader Gameplay;
+        [NonSerialized] public GameActions Actions;
 
-        public GameActions Actions;
+        [SerializeField] InputActionAsset UI;
+
         void OnEnable()
         {
             Actions = new GameActions();
             Gameplay = new GameplayInputReader();
             Actions.Gameplay.SetCallbacks(Gameplay);
+
+            EnableGamplay();
+        }
+
+        public void EnableGamplay()
+        {
+            Actions.Gameplay.Enable();
+        }
+
+        public void DisableGameplay()
+        {
+            Actions.Gameplay.Enable();
+        }
+
+        public void EnableUI()
+        {
+            UI.Enable();
+        }
+
+        public void DisableUI()
+        {
+            UI.Disable();
         }
     }
 

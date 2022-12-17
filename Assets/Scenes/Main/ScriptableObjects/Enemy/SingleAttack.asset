@@ -15,7 +15,7 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
   ShotInterval: 1
   ShotAngle: 0
-  ShotPath: {fileID: 0}
+  ShotPath: {fileID: 11400000, guid: efc45c5f5c8e34642b539df5a7355d82, type: 2}

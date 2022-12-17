@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94b00cb3ffa0584e8e0d81fc82e719f, type: 3}
   m_Name: NormalShotPath
   m_EditorClassIdentifier: 
-  TScale: 1
-  XScale: 1
-  YScale: 1
-  pathType: 0
+  TScale: 3.4
+  XScale: 3.02
+  YScale: 0.7
+  TOffset: 0
+  pathType: 1

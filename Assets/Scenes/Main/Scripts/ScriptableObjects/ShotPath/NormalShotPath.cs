@@ -15,14 +15,14 @@ namespace SJ22
         };
         [SerializeField] PathType pathType;
 
-        public override Vector2 GetPosition(float t)
+        public override Vector2 F(float t)
         {
             switch (pathType)
             {
                 case PathType.Straight:
-                    return new Vector2(t, 0);
+                    return new Vector2(0, -t);
                 case PathType.Sin:
-                    return new Vector2(t, Mathf.Sin(t));
+                    return new Vector2(Mathf.Sin(t), -t);
                 default:
                     throw new NotImplementedException();
             }

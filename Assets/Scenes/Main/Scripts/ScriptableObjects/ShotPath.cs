@@ -8,6 +8,12 @@ namespace SJ22
     {
         public float TScale = 1f, XScale = 1f, YScale = 1f;
         public float TOffset = 0f;
-        public abstract Vector2 GetPosition(float t);
+        public abstract Vector2 F(float t);
+
+        public Vector2 GetPosition(float t)
+        {
+            var p = F(TScale * t + TOffset);
+            return new Vector2(p.x * XScale, p.y * YScale);
+        }
     }
 }

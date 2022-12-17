@@ -11,6 +11,8 @@ namespace SJ22
         [SerializeField] new BoxCollider2D collider;
         [SerializeField] SpriteRenderer spriteRenderer;
 
+        [SerializeField] GameObject shotPrefab;
+
         [SerializeField] public EnemyProperties Properties;
 
         IEnumerator shotEnumerator;
@@ -70,7 +72,12 @@ namespace SJ22
 
         void InstantiateShot(ShotProperties shotProperties)
         {
+            var shotGO = Instantiate(shotPrefab);
+            shotGO.transform.position = collider.bounds.center;
 
+            var shot = shotGO.GetComponent<Shot>();
+            shot.Properties = shotProperties;
+            shot.transform.SetParent(transform.parent, true);
         }
     }
 }

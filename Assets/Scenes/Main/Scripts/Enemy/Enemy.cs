@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace SJ22
+{
+    public class Enemy : MonoBehaviour
+    {
+        [SerializeField] GameTime time;
+
+        [SerializeField] new BoxCollider2D collider;
+        [SerializeField] SpriteRenderer spriteRenderer;
+
+        [SerializeField] public EnemyProperties Properties;
+
+        IEnumerator shotEnumerator;
+
+        bool waiting = false;
+        float waitEndTime;
+
+        void Start()
+        {
+            if (spriteRenderer != null && Properties.Sprite != null)
+            {
+                spriteRenderer.sprite = Properties.Sprite;
+            }
+            collider.size = Properties.Hitbox.size;
+            collider.offset = Properties.Hitbox.center;
+
+            shotEnumerator = Properties.AttackProperties.GenerateShotPattern();
+        }
+
+        private void Update()
+        {
+            if (waiting && time.Time >= waitEndTime)
+            {
+                waiting = false;
+            }
+            if (!waiting)
+            {
+                GenerateShots();
+            }
+
+        }
+
+        void GenerateShots()
+        {
+            // try to get the next shot from the enumerator
+            // returns false if end of enumerator
+            while (shotEnumerator.MoveNext())
+            {
+                object obj = shotEnumerator.Current;
+                if (obj is ShotProperties shotProperties)
+                {
+                    InstantiateShot(shotProperties);
+                }
+                else if (obj is AttackProperties.Wait wait)
+                {
+                    waitEndTime = time.Time + wait.Seconds;
+                    waiting = true;
+                    break;
+                }
+                else
+                {
+                    // just in case ;)
+                    break;
+                }
+            }
+        }
+
+        void InstantiateShot(ShotProperties shotProperties)
+        {
+
+        }
+    }
+}

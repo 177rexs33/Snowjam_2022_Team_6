@@ -7,6 +7,7 @@ namespace SJ22
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMove : MonoBehaviour
     {
+        [SerializeField] GameTime time;
         [SerializeField] GameInputReader inputReader;
         [SerializeField] float speed;
 
@@ -16,13 +17,13 @@ namespace SJ22
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
-            //inputReader.Gameplay.Move += dir => rb.velocity = dir * speed;
+            // we move in Update to make movement smoother
             inputReader.Gameplay.Move += dir => moveDirection = dir;
         }
 
         void Update()
         {
-            transform.position += Time.deltaTime * (Vector3) moveDirection * speed;
+            transform.position += time.DeltaTime * (Vector3) moveDirection * speed;
         }
     }
 }

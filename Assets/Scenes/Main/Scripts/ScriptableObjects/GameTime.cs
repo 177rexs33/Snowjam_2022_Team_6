@@ -7,7 +7,9 @@ namespace SJ22
     [CreateAssetMenu(fileName = "GameTime", menuName = "Game Time", order = 0)]
     public class GameTime : ScriptableObject
     {
-        private float resumeTime = 0f;
+        private float resumeScale = 0f;
+
+        [SerializeField] private float defaultScale = 1f;
 
         private float _scale = 1f;
         public float Scale {
@@ -24,15 +26,25 @@ namespace SJ22
         [System.NonSerialized] public float DeltaTime;
         [System.NonSerialized] public float FixedDeltaTime;
 
+        void OnEnable()
+        {
+            _scale = defaultScale;
+        }
+
         public void Pause()
         {
-            resumeTime = Scale;
+            resumeScale = Scale;
             Scale = 0f;
         }
 
         public void Resume()
         {
-            Scale = resumeTime;
+            Scale = resumeScale;
+        }
+
+        public void ResetScale()
+        {
+            Scale = defaultScale;
         }
     }
 }

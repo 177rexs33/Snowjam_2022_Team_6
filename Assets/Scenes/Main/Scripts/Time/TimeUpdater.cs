@@ -6,16 +6,16 @@ namespace SJ22
 {
     public class TimeUpdater : MonoBehaviour
     {
-        [SerializeField] List<GameTime> gameTimes = new List<GameTime>();
+        [SerializeField] TimeGroup timeGroup;
 
         void Awake()
         {
-            gameTimes.ForEach(t => t.Time = Time.time);
+            timeGroup.GameTimes.ForEach(t => t.Time = Time.time);
         }
 
         void Update()
         {
-            gameTimes.ForEach(t => {
+            timeGroup.GameTimes.ForEach(t => {
                 t.DeltaTime = Time.deltaTime * t.Scale;
                 t.Time += t.DeltaTime;
             });
@@ -23,7 +23,7 @@ namespace SJ22
 
         void FixedUpdate()
         {
-            gameTimes.ForEach(t => t.FixedDeltaTime = Time.fixedDeltaTime);
+            timeGroup.GameTimes.ForEach(t => t.FixedDeltaTime = Time.fixedDeltaTime);
         }
     }
 }

@@ -9,22 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c11f0ffa1f6178d409f7ed7e6f44b450, type: 3}
-  m_Name: ElfAttack
+  m_Script: {fileID: 11500000, guid: f0404a069d867f342a2d6cf0311d98df, type: 3}
+  m_Name: GingerAttack
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1, y: 1, z: 0}
-  AttackDelay: 0.2
-  AttackInterval: 1
-  NetAttackAngle: 0
-  ShotInterval: 0.3
-  ShotAngles:
-  - -90
-  - 90
-  - 0
-  NShots: 3
-  ShotSpreadAngle: 90
+  ShotDelay: 0.5
+  ShotInterval: 0.1
+  ShotAngle: 0
+  NShots: 2
+  ShotSpreadAngle: 0
   ShotPaths:
-  - {fileID: 11400000, guid: 7a6407451e063a64195b492c8a3f9f97, type: 2}
+  - {fileID: 11400000, guid: 76f7a267979c624429cfc84ab6f94846, type: 2}
+  - {fileID: 11400000, guid: a2e71fe4d592a3b4a95f7f4162f27ad3, type: 2}

@@ -17,7 +17,7 @@ namespace SJ22
         public int NShots;
         public float ShotSpreadAngle;
 
-        public ShotPath ShotPath;
+        public List<ShotPath> ShotPaths;
         public override IEnumerator GenerateShotPattern()
         {
             yield return new Wait(ShotDelay);
@@ -25,6 +25,11 @@ namespace SJ22
             {
                 for(int i = 0; i < NShots; ++i)
                 {
+                    ShotPath shotPath = null;
+                    if(ShotPaths != null && ShotPaths.Count > 0)
+                    {
+                        shotPath = ShotPaths[i % ShotPaths.Count];
+                    }
                     float theta = 
                         -ShotSpreadAngle / 2
                         + (float)i/(NShots - 1)
@@ -34,7 +39,7 @@ namespace SJ22
                         Sprite = Sprite,
                         Hitbox = Hitbox,
                         Angle = ShotAngle + theta,
-                        Path = ShotPath,
+                        Path = shotPath,
                     };
                 }
                 yield return new Wait(ShotInterval);

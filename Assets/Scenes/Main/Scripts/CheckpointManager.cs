@@ -13,8 +13,12 @@ namespace SJ22
         [SerializeField] EventSO restartFromCheckpointEvent;
         [SerializeField] GameObject checkpointPrefab;
 
+        List<Checkpoint> checkpointScripts = new List<Checkpoint>();
+        
+
         int nextCheckpointIndex = 0;
         float lastCheckpoint = 0;
+        bool checkpoint;
 
         float NextCheckpointTime => checkpoints.Timepoints[nextCheckpointIndex];
 
@@ -30,6 +34,9 @@ namespace SJ22
                 checkpointGO.transform.position = new Vector3(
                     0, screenProperties.Speed * checkpointTime, 0
                 );
+
+                checkpointScripts.Add(checkpointGO.GetComponent<Checkpoint>());
+                
             }
         }
 
@@ -40,7 +47,9 @@ namespace SJ22
                 if(time.Time > NextCheckpointTime)
                 {
                     lastCheckpoint = NextCheckpointTime;
+                    checkpointScripts[nextCheckpointIndex].SetActive(true);
                     nextCheckpointIndex++;
+                    
                 }
             }
         }

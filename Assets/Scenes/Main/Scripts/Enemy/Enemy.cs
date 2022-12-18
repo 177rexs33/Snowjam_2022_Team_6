@@ -30,6 +30,12 @@ namespace SJ22
             collider.offset = Properties.Hitbox.center;
 
             shotEnumerator = Properties.AttackProperties.GenerateShotPattern();
+
+            if (Properties.AnimatorController != null)
+            {
+                GetComponent<Animator>().runtimeAnimatorController = Properties.AnimatorController;
+
+            }
         }
 
         private void Update()

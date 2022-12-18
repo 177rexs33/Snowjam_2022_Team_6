@@ -13,5 +13,7 @@ namespace SJ22
         {
             transform.position += speed * time.DeltaTime * Vector3.up;
         }
+
+
     }
 }

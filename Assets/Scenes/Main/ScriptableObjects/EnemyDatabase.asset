@@ -16,4 +16,8 @@ MonoBehaviour:
   - Name: snowman
     Properties: {fileID: 11400000, guid: 142f7b9a783ea104d8a938f0eaaf1b65, type: 2}
   - Name: elf
-    Properties: {fileID: 11400000, guid: 54c8ff20d8932e94c8db4973d31ab778, type: 2}
+    Properties: {fileID: 11400000, guid: 3f2fbdfbb12e0904c934ec35453ddc1e, type: 2}
+  - Name: bear
+    Properties: {fileID: 11400000, guid: 3b0d5ed00952df54ba7cd565f023f19f, type: 2}
+  - Name: gingerbread
+    Properties: {fileID: 11400000, guid: d753b6fb3ef8c4d47b2fe084a30d7591, type: 2}

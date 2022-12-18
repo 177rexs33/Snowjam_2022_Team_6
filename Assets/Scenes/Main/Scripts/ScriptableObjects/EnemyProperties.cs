@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace SJ22
@@ -8,6 +9,7 @@ namespace SJ22
     public class EnemyProperties : ScriptableObject
     {
         public Sprite Sprite;
+        public AnimatorController AnimatorController;
         public Bounds Hitbox;
         public AttackProperties AttackProperties;
     }

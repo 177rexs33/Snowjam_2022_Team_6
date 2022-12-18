@@ -57,7 +57,7 @@ namespace SJ22
                 Destroy(gameObject);
                 return;
             }
-            Debug.LogFormat("{0}, {1}", Properties.Angle, transform.localPosition);
+            
             transform.localPosition =
                 rotation
                 * (Vector3)Properties.Path.GetPosition(time.Time - startTime)

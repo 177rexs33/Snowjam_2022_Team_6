@@ -26,9 +26,10 @@ namespace SJ22
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] GameTime time;
-        [SerializeField] EventSO changeTimeEvent;
+        [SerializeField] EventSO restartFromCheckpointEvent;
         [SerializeField] GameObject screen;
         [SerializeField] EnemyDatabase enemyDatabase;
+        [SerializeField] GameObject shotContainer;
         [SerializeField] GameObject enemyPrefab;
 
         /// <summary>
@@ -49,11 +50,26 @@ namespace SJ22
         void Awake()
         {
             time.TimeChanged += RecalculateSpawnIndex;
+            restartFromCheckpointEvent.Event += ClearShotContainer;
+        }
+
+        void OnDestroy()
+        {
+            time.TimeChanged -= RecalculateSpawnIndex;
+            restartFromCheckpointEvent.Event -= ClearShotContainer;
         }
 
         void Start()
         {
             ParseScript();
+        }
+
+        void ClearShotContainer()
+        {
+            foreach(Transform shot in shotContainer.transform)
+            {
+                Destroy(shot.gameObject);
+            }
         }
 
         void RecalculateSpawnIndex(float _)
@@ -184,6 +200,7 @@ namespace SJ22
             
             var enemy = enemyGO.GetComponent<Enemy>();
             enemy.Properties = enemySpawn.Properties;
+            enemy.ShotContainer = shotContainer;
 
             var enemyMove = enemyGO.GetComponent<EnemyMove>();
             enemyMove.Speed = enemySpawn.Speed;

@@ -15,6 +15,7 @@ namespace SJ22
         [SerializeField] GameObject shotPrefab;
 
         [SerializeField] public EnemyProperties Properties;
+        [SerializeField] public GameObject ShotContainer;
 
         IEnumerator shotEnumerator;
 
@@ -99,7 +100,7 @@ namespace SJ22
 
             var shot = shotGO.GetComponent<Shot>();
             shot.Properties = shotProperties;
-            shot.transform.SetParent(transform.parent, true);
+            shot.transform.SetParent(ShotContainer.transform, true);
         }
 
     }

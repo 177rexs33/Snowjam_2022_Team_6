@@ -10,6 +10,7 @@ namespace SJ22
         [SerializeField] GameInputReader inputReader;
         [SerializeField] GameObject bullet;
         [SerializeField] GameTime time;
+        [SerializeField] GameObject shotContainer;
 
         [SerializeField] float shotIntreval = 0.5f;
         float nextTimeToShoot = 0f;
@@ -33,7 +34,7 @@ namespace SJ22
         void Shoot()
         {
             var bulletGO = Instantiate(bullet);
-            bulletGO.transform.parent = transform.parent;
+            bulletGO.transform.parent = shotContainer.transform;
             bulletGO.transform.position = transform.position;
             
         }

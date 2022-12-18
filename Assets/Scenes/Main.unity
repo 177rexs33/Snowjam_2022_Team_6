@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeGroup: {fileID: 11400000, guid: 04eab08df41d5ee46a53e93bf0b080c7, type: 2}
+  playerDieEvent: {fileID: 11400000, guid: dea5bc1dcda51a644bef93f7f067d42d, type: 2}
 --- !u!4 &1690910928
 Transform:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ GameObject:
   - component: {fileID: 2085998957}
   - component: {fileID: 2085998956}
   - component: {fileID: 2085998958}
+  - component: {fileID: 2085998959}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -527,3 +529,19 @@ MonoBehaviour:
   actionRechargingEvent: {fileID: 11400000, guid: 61374a6b0697e3343a042ea3da186f4f, type: 2}
   actionDuration: 5
   rechargeDuration: 5
+--- !u!114 &2085998959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085998949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4d1bf325326dc4b92494a709fde7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 88ee452d365c5ba4f8489f4bc251052a, type: 2}
+  bullet: {fileID: 2839784740180424450, guid: 11ea9cf80f03e1045a48faf2d0e4e2fd, type: 3}
+  time: {fileID: 11400000, guid: 525f92129a8de1d4184369d3f4aea0f9, type: 2}
+  shotIntreval: 0.2

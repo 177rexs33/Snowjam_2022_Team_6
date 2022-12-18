@@ -31,8 +31,9 @@ namespace SJ22
             } 
         }
         public System.Action<float> ScaleChanged;
+        public System.Action<float> TimeChanged;
 
-        [System.NonSerialized] public float Time;
+        public float Time { get; private set; }
         [System.NonSerialized] public float DeltaTime;
         [System.NonSerialized] public float FixedDeltaTime;
 
@@ -61,6 +62,17 @@ namespace SJ22
         public void ResetScale()
         {
             Scale = defaultScale;
+        }
+
+        public void TickTime()
+        {
+            Time += DeltaTime * Scale;
+        }
+
+        public void SetTime(float newTime)
+        {
+            Time = newTime;
+            TimeChanged?.Invoke(Time);
         }
     }
 }

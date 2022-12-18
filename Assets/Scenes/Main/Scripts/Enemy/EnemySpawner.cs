@@ -26,7 +26,7 @@ namespace SJ22
     public class EnemySpawner : MonoBehaviour
     {
         [SerializeField] GameTime time;
-        [SerializeField] EventSO restartFromCheckpointEvent;
+        [SerializeField] EventSO changeTimeEvent;
         [SerializeField] GameObject screen;
         [SerializeField] EnemyDatabase enemyDatabase;
         [SerializeField] GameObject enemyPrefab;
@@ -48,7 +48,7 @@ namespace SJ22
 
         void Awake()
         {
-            restartFromCheckpointEvent.Event += ResetSpawnIndex;
+            time.TimeChanged += RecalculateSpawnIndex;
         }
 
         void Start()
@@ -56,17 +56,20 @@ namespace SJ22
             ParseScript();
         }
 
-        void ResetSpawnIndex()
+        void RecalculateSpawnIndex(float _)
         {
-            for(int i = 0; i < spawns.Count; i++)
+            int newSpawnIndex;
+            for(newSpawnIndex = 0; newSpawnIndex < spawns.Count; newSpawnIndex++)
             {
-                var spawn = spawns[i];
+                var spawn = spawns[newSpawnIndex];
                 if(spawn.Time > time.Time)
                 {
-                    spawnIndex = i;
                     break;
                 }
             }
+            // this makes it so if none of the spawns are after, we set to
+            // the index after the end of list
+            spawnIndex = newSpawnIndex;
         }
 
 

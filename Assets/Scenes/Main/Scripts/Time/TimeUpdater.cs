@@ -16,7 +16,7 @@ namespace SJ22
             timeGroup.GameTimes.ForEach(t => {
                 t.Resume();
                 t.ResetScale();
-                t.Time = Time.time;
+                t.SetTime(Time.time);
             });
         }
 
@@ -24,7 +24,7 @@ namespace SJ22
         {
             timeGroup.GameTimes.ForEach(t => {
                 t.DeltaTime = Time.deltaTime * t.Scale;
-                t.Time += t.DeltaTime;
+                t.TickTime();
             });
 
 
@@ -38,7 +38,6 @@ namespace SJ22
         void OnPlayerDie()
         {
             timeGroup.GameTimes.ForEach(t => t.Pause());
-
         }
     }
 }

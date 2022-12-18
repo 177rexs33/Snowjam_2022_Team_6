@@ -85,5 +85,6 @@ namespace SJ22
             shot.Properties = shotProperties;
             shot.transform.SetParent(transform.parent, true);
         }
+
     }
 }

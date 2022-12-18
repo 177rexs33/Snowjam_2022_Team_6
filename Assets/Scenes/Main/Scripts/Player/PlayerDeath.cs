@@ -14,16 +14,18 @@ namespace SJ22
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            
             if ((enemyLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
             {
                 Die();
+                Debug.Log("collision");
             }
         }
 
 
         void Die()
         {
-            Debug.Log("death");
+            Debug.Log("dieee");
             playerDeath.Event?.Invoke();
         }
     }

@@ -17,7 +17,7 @@ namespace SJ22
             private set
             {
                 _scale = value;
-                ScaleChanged(value);
+                ScaleChanged?.Invoke(value);
             } 
         }
         public System.Action<float> ScaleChanged;

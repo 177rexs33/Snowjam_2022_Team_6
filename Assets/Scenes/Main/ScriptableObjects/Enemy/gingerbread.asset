@@ -16,5 +16,5 @@ MonoBehaviour:
   AnimatorController: {fileID: 9100000, guid: e4c2df4cc0ce46a41a4df8e7e0d046af, type: 2}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 0}
   AttackProperties: {fileID: 11400000, guid: 72b0990e04b863b4484df00c63f1a8db, type: 2}

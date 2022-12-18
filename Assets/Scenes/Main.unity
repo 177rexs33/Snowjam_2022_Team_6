@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 2085998954}
   - component: {fileID: 2085998957}
   - component: {fileID: 2085998956}
+  - component: {fileID: 2085998958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -506,3 +507,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   playerDeath: {fileID: 11400000, guid: dea5bc1dcda51a644bef93f7f067d42d, type: 2}
+--- !u!114 &2085998958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085998949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75b9fdc4545c104390531668974bc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 11400000, guid: 525f92129a8de1d4184369d3f4aea0f9, type: 2}
+  enemyTime: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  inputReader: {fileID: 11400000, guid: 88ee452d365c5ba4f8489f4bc251052a, type: 2}
+  actionReadyEvent: {fileID: 11400000, guid: 5dc3abf3d26dfd34e847246150b382ea, type: 2}
+  actionActiveEvent: {fileID: 11400000, guid: 435c1af9f2205594b991e829357f2200, type: 2}
+  actionRechargingEvent: {fileID: 11400000, guid: 61374a6b0697e3343a042ea3da186f4f, type: 2}
+  actionDuration: 5
+  rechargeDuration: 5

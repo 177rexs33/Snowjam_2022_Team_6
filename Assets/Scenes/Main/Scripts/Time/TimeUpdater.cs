@@ -10,7 +10,11 @@ namespace SJ22
 
         void Awake()
         {
-            timeGroup.GameTimes.ForEach(t => t.Time = Time.time);
+            timeGroup.GameTimes.ForEach(t => {
+                t.Resume();
+                t.ResetScale();
+                t.Time = Time.time;
+            });
         }
 
         void Update()

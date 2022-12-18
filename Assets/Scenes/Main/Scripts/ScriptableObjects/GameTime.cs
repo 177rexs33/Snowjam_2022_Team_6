@@ -9,6 +9,16 @@ namespace SJ22
     {
         private float resumeScale = 0f;
 
+        private bool _paused = false;
+        public bool Paused
+        {
+            get => _paused;
+            private set
+            {
+                _paused = value;
+            }
+        }
+
         [SerializeField] private float defaultScale = 1f;
 
         private float _scale = 1f;
@@ -17,7 +27,7 @@ namespace SJ22
             private set
             {
                 _scale = value;
-                ScaleChanged(value);
+                ScaleChanged?.Invoke(value);
             } 
         }
         public System.Action<float> ScaleChanged;
@@ -29,16 +39,22 @@ namespace SJ22
         void OnEnable()
         {
             _scale = defaultScale;
+            Paused = false;
         }
 
         public void Pause()
         {
+            if (Paused) return;
+            Paused = true;
             resumeScale = Scale;
             Scale = 0f;
+            _scale = 0f;
         }
 
         public void Resume()
         {
+            if (!Paused) return;
+            Paused = false;
             Scale = resumeScale;
         }
 

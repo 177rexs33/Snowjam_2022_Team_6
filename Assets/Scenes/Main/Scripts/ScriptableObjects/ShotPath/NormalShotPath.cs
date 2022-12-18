@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SJ22
 {
-    [CreateAssetMenu(fileName = "NormalShotPath", menuName = "Enemy/Path/Normal", order = 0)]
+    [CreateAssetMenu(fileName = "NormalShotPath", menuName = "Enemy/Shot Path/Normal", order = 0)]
     public class NormalShotPath : ShotPath
     {
         public enum PathType

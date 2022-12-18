@@ -73,7 +73,7 @@ namespace SJ22
         void InstantiateShot(ShotProperties shotProperties)
         {
             var shotGO = Instantiate(shotPrefab);
-            shotGO.transform.position = collider.bounds.center;
+            shotGO.transform.position = transform.position;
 
             var shot = shotGO.GetComponent<Shot>();
             shot.Properties = shotProperties;

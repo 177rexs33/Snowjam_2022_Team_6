@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592453606}
   - component: {fileID: 592453607}
+  - component: {fileID: 592453608}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -255,6 +256,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: 525f92129a8de1d4184369d3f4aea0f9, type: 2}
   speed: 10
+--- !u!114 &592453608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592453605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680c3e7775925324e9a40537b63fe7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  screen: {fileID: 592453605}
+  enemyDatabase: {fileID: 11400000, guid: 82da4fa93178f6044bc54e6534716e8b, type: 2}
+  enemyPrefab: {fileID: 777424567276393584, guid: 1dc9df96b106f5d4cbfb4b5dd2005d7e, type: 3}
+  script: {fileID: 4900000, guid: 5df1989ffde171f4dbc48bdf69c39b33, type: 3}
 --- !u!1 &1690910926
 GameObject:
   m_ObjectHideFlags: 0

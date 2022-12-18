@@ -27,8 +27,8 @@ namespace SJ22
             get
             {
                 var centerPos = transform.localPosition + Properties.Hitbox.center;
-                return Mathf.Abs(centerPos.x + boundingLengthApprox/2) > screenProperties.Width / 2f
-                    || Mathf.Abs(centerPos.y + boundingLengthApprox/2) > screenProperties.Height / 2f;
+                return Mathf.Abs(centerPos.x) > (screenProperties.Width + boundingLengthApprox)/ 2f
+                    || Mathf.Abs(centerPos.y) > (screenProperties.Height + boundingLengthApprox) / 2f;
             }
         }
 
@@ -46,7 +46,7 @@ namespace SJ22
 
             startTime = time.Time;
             startPosition = transform.localPosition;
-            rotation = Quaternion.AngleAxis(Properties.Angle, Vector3.up);
+            rotation = Quaternion.AngleAxis(Properties.Angle, Vector3.forward);
             transform.rotation = rotation;
         }
 
@@ -55,10 +55,12 @@ namespace SJ22
             if (IsOutOfBounds)
             {
                 Destroy(gameObject);
+                return;
             }
+            Debug.LogFormat("{0}, {1}", Properties.Angle, transform.localPosition);
             transform.localPosition =
                 rotation
-                * ((Vector3)Properties.Path.GetPosition(time.Time - startTime) - startPosition)
+                * (Vector3)Properties.Path.GetPosition(time.Time - startTime)
                 + startPosition;
         }
     }

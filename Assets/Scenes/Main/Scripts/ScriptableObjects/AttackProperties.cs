@@ -20,9 +20,6 @@ namespace SJ22
             public Wait(float seconds) => Seconds = seconds;
         }
 
-        public Sprite Sprite;
-        public Bounds Hitbox;
-
         /// <returns>Either an instance of ShotProperties or an instance of Wait</returns>
         public abstract IEnumerator GenerateShotPattern();
     }

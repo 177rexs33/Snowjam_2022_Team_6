@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 777424567276393596}
   - component: {fileID: 777424567276393599}
   - component: {fileID: 777424567276393598}
+  - component: {fileID: 4717201699084421992}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -129,3 +130,16 @@ MonoBehaviour:
   spriteRenderer: {fileID: 777424567276393596}
   shotPrefab: {fileID: 1476131364281127367, guid: ef3af8d640e82db46b2910495e262d35, type: 3}
   Properties: {fileID: 0}
+--- !u!114 &4717201699084421992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777424567276393584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2351d28b07a6af24184117424d51b20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}

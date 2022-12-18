@@ -4,16 +4,20 @@ using UnityEngine;
 
 namespace SJ22
 {
-    [CreateAssetMenu(fileName = "SingleAttack", menuName = "Enemy/Attack/Single", order = 0)]
-
-    public class SingleAttackProperties : AttackProperties
+    [CreateAssetMenu(fileName = "RepeatAttack", menuName = "Enemy/Attack/Repeat", order = 0)]
+    public class RepeatAttackProperties : AttackProperties
     {
+        public Sprite Sprite;
+        public Bounds Hitbox;
+
+        public float ShotDelay;
         public float ShotInterval;
         public float ShotAngle;
         public ShotPath ShotPath;
 
         public override IEnumerator GenerateShotPattern()
         {
+            yield return new Wait(ShotDelay);
             while (true)
             {
                 yield return new ShotProperties

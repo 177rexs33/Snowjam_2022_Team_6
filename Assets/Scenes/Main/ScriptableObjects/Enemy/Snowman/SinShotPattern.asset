@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f94b00cb3ffa0584e8e0d81fc82e719f, type: 3}
-  m_Name: NormalShotPath
+  m_Name: SinShotPattern
   m_EditorClassIdentifier: 
   TScale: 3.4
   XScale: 3.02

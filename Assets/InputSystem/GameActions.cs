@@ -170,30 +170,30 @@ namespace SJ22
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5a802bfd-3e68-463d-91f4-0844a013dfe0"",
-                    ""path"": ""<Keyboard>/z"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""29120ea5-d04d-4ec5-b37e-88aaedba0a71"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""582cb910-3887-4752-b484-856637f035f8"",
                     ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""923f0014-f528-4272-ae35-9281ae81950d"",
+                    ""path"": ""<Keyboard>/k"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5a802bfd-3e68-463d-91f4-0844a013dfe0"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -203,8 +203,8 @@ namespace SJ22
                 },
                 {
                     ""name"": """",
-                    ""id"": ""923f0014-f528-4272-ae35-9281ae81950d"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""id"": ""29120ea5-d04d-4ec5-b37e-88aaedba0a71"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

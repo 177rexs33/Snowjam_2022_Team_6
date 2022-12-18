@@ -8,18 +8,28 @@ namespace SJ22
     public class PlayerMove : MonoBehaviour
     {
         [SerializeField] GameTime time;
+        [SerializeField] EventSO restartFromCheckpointEvent;
         [SerializeField] GameInputReader inputReader;
         [SerializeField] ScreenProperties screenProperties;
         [SerializeField] float speed;
 
         Rigidbody2D rb;
         Vector2 moveDirection;
+        Vector3 startPosition;
 
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             // we move in Update to make movement smoother
             inputReader.Gameplay.Move += dir => moveDirection = dir;
+
+            startPosition = transform.localPosition;
+            restartFromCheckpointEvent.Event += ResetLocalPosition;
+        }
+
+        void ResetLocalPosition()
+        {
+            transform.localPosition = startPosition;
         }
 
         void Update()

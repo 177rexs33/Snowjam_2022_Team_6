@@ -7,6 +7,7 @@ namespace SJ22
     [CreateAssetMenu(fileName = "ScreenProperties", menuName = "Screen Properties", order = 0)]
     public class ScreenProperties : ScriptableObject
     {
+        public float Speed;
         public float Width;
         public float Height;
     }

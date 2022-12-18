@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  restartFromCheckpointEvent: {fileID: 11400000, guid: 27ca0396b4ac1e64fa483df1ac5bd8a3, type: 2}
   collider: {fileID: 777424567276393599}
   spriteRenderer: {fileID: 777424567276393596}
   shotPrefab: {fileID: 1476131364281127367, guid: ef3af8d640e82db46b2910495e262d35, type: 3}

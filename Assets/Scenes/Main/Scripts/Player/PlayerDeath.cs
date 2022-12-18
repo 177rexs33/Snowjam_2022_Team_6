@@ -10,6 +10,7 @@ namespace SJ22
 
         [SerializeField] private LayerMask enemyLayer;
         [SerializeField] private EventSO playerDeath;
+        [SerializeField] EventSO restartFromCheckpointEvent;
 
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +28,13 @@ namespace SJ22
         {
             Debug.Log("dieee");
             playerDeath.Event?.Invoke();
+            IEnumerator WaitThenRestart()
+            {
+                yield return new WaitForSeconds(2);
+                restartFromCheckpointEvent.Event?.Invoke();
+            }
+
+            StartCoroutine(WaitThenRestart());
         }
     }
 }

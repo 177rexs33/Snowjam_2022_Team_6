@@ -7,11 +7,11 @@ namespace SJ22
     public class ScreenMove : MonoBehaviour
     {
         [SerializeField] GameTime time;
-        [SerializeField] float speed;
+        [SerializeField] ScreenProperties properties;
 
         void Update()
         {
-            transform.position += speed * time.DeltaTime * Vector3.up;
+            transform.position += properties.Speed * time.DeltaTime * Vector3.up;
         }
 
 

@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 592453606}
   - component: {fileID: 592453607}
   - component: {fileID: 592453608}
+  - component: {fileID: 592453609}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -255,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: 525f92129a8de1d4184369d3f4aea0f9, type: 2}
-  speed: 10
+  properties: {fileID: 11400000, guid: 1d23a60c402cd2b4ca9a5d6f1d1e419e, type: 2}
 --- !u!114 &592453608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,10 +270,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  restartFromCheckpointEvent: {fileID: 11400000, guid: 27ca0396b4ac1e64fa483df1ac5bd8a3, type: 2}
   screen: {fileID: 592453605}
   enemyDatabase: {fileID: 11400000, guid: 82da4fa93178f6044bc54e6534716e8b, type: 2}
   enemyPrefab: {fileID: 777424567276393584, guid: 1dc9df96b106f5d4cbfb4b5dd2005d7e, type: 3}
   script: {fileID: 4900000, guid: 5df1989ffde171f4dbc48bdf69c39b33, type: 3}
+--- !u!114 &592453609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592453605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7687f486356927140a97aac3ed2cb641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  timesToUnpause:
+  - {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  - {fileID: 11400000, guid: 525f92129a8de1d4184369d3f4aea0f9, type: 2}
+  screenProperties: {fileID: 11400000, guid: 1d23a60c402cd2b4ca9a5d6f1d1e419e, type: 2}
+  checkpoints: {fileID: 11400000, guid: 47ac31ba981258742baa9f02f5d94e51, type: 2}
+  restartFromCheckpointEvent: {fileID: 11400000, guid: 27ca0396b4ac1e64fa483df1ac5bd8a3, type: 2}
+  checkpointPrefab: {fileID: 112588687214490311, guid: fcbf50d06ac3a1944b0d25c730253e9f, type: 3}
 --- !u!1 &1690910926
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +531,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   playerDeath: {fileID: 11400000, guid: dea5bc1dcda51a644bef93f7f067d42d, type: 2}
+  restartFromCheckpointEvent: {fileID: 11400000, guid: 27ca0396b4ac1e64fa483df1ac5bd8a3, type: 2}
 --- !u!114 &2085998958
 MonoBehaviour:
   m_ObjectHideFlags: 0

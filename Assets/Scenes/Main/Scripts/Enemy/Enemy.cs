@@ -7,6 +7,7 @@ namespace SJ22
     public class Enemy : MonoBehaviour
     {
         [SerializeField] GameTime time;
+        [SerializeField] EventSO restartFromCheckpointEvent;
 
         [SerializeField] new BoxCollider2D collider;
         [SerializeField] SpriteRenderer spriteRenderer;
@@ -19,6 +20,21 @@ namespace SJ22
 
         bool waiting = false;
         float waitEndTime;
+
+        void Awake()
+        {
+            restartFromCheckpointEvent.Event += OnRestart;
+        }
+
+        void OnDestroy()
+        {
+            restartFromCheckpointEvent.Event -= OnRestart;
+        }
+
+        void OnRestart()
+        {
+            Destroy(gameObject);
+        }
 
         void Start()
         {

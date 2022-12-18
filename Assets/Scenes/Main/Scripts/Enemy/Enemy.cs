@@ -42,8 +42,13 @@ namespace SJ22
             if (spriteRenderer != null && Properties.Sprite != null)
             {
                 spriteRenderer.sprite = Properties.Sprite;
+                transform.localScale = new Vector3(
+                    Properties.Scale,
+                    Properties.Scale,
+                    1f
+                );
             }
-            collider.size = Properties.Hitbox.size;
+            collider.size = Properties.Hitbox.size / Properties.Scale;
             collider.offset = Properties.Hitbox.center;
 
             shotEnumerator = Properties.AttackProperties.GenerateShotPattern();

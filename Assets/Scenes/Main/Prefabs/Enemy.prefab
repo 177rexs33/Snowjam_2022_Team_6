@@ -202,3 +202,4 @@ MonoBehaviour:
   playerBullets:
     serializedVersion: 2
     m_Bits: 256
+  explosion: {fileID: 315305220630517515, guid: cc0bcdaaaccdbbe429a9792a5dffe374, type: 3}

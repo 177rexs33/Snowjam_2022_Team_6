@@ -21,4 +21,4 @@ MonoBehaviour:
   ShotAngle: 0
   NShots: 3
   ShotSpreadAngle: 90
-  ShotPath: {fileID: 0}
+  ShotPath: {fileID: 11400000, guid: 7a6407451e063a64195b492c8a3f9f97, type: 2}

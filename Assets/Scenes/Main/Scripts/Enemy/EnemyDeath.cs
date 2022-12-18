@@ -7,7 +7,8 @@ namespace SJ22
     public class EnemyDeath : MonoBehaviour
     {
         [SerializeField] LayerMask playerBullets;
-
+        [SerializeField] GameObject explosion;
+        
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -20,8 +21,12 @@ namespace SJ22
 
         void Die()
         {
-            
+            var explosionGO = Instantiate(explosion);
+            explosionGO.transform.parent = this.transform.parent;
+            explosionGO.transform.position = this.transform.position;
             Destroy(this.gameObject);
+            
+
         }
     }
 }

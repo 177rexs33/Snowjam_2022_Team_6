@@ -4,8 +4,14 @@ using UnityEngine;
 
 namespace SJ22
 {
-    [CreateAssetMenu(fileName = "MultiShotgunAttackProperties", menuName = "Enemy/Attack/MultiShotgun", order = 0)]
-    public class MultiShotgunAttackProperties : AttackProperties
+    [System.Serializable]
+    public class SprayRange
+    {
+        public float StartAngle, EndAngle;
+    }
+
+    [CreateAssetMenu(fileName = "MultiSprayAttackProperties", menuName = "Enemy/Attack/MultiSpray", order = 0)]
+    public class MultiSprayAttackProperties : AttackProperties
     {
         public Sprite Sprite;
         public Bounds Hitbox;
@@ -14,19 +20,20 @@ namespace SJ22
         public float AttackInterval;
         public float NetAttackAngle;
 
-        public float ShotInterval;
-        public List<float> ShotAngles;
+        public float SprayInterval;
+        public List<SprayRange> SprayRanges;
 
+        public float ShotInterval;
         public int NShots;
-        public float ShotSpreadAngle;
 
         public List<ShotPath> ShotPaths;
+
         public override IEnumerator GenerateShotPattern()
         {
             yield return new Wait(AttackDelay);
             while (true)
             {
-                foreach(var shotAngle in ShotAngles)
+                foreach (var sprayRange in SprayRanges)
                 {
                     for (int i = 0; i < NShots; ++i)
                     {
@@ -36,19 +43,19 @@ namespace SJ22
                             shotPath = ShotPaths[i % ShotPaths.Count];
                         }
                         float theta =
-                            -ShotSpreadAngle / 2
-                            + (float)i / (NShots - 1)
-                            * ShotSpreadAngle;
+                            sprayRange.StartAngle
+                            + (sprayRange.EndAngle - sprayRange.StartAngle)
+                            * i / (NShots - 1);
                         yield return new ShotProperties
                         {
                             Sprite = Sprite,
                             Hitbox = Hitbox,
-                            Angle = NetAttackAngle + theta + shotAngle,
+                            Angle = NetAttackAngle + theta,
                             Path = shotPath,
                         };
+                        yield return new Wait(ShotInterval);
                     }
-                    yield return new Wait(ShotInterval);
-
+                    yield return new Wait(SprayInterval);
                 }
                 yield return new Wait(AttackInterval);
             }

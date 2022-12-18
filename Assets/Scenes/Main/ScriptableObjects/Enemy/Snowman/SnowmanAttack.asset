@@ -9,18 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0404a069d867f342a2d6cf0311d98df, type: 3}
+  m_Script: {fileID: 11500000, guid: c7544c1f2f076c64287476b682ed0325, type: 3}
   m_Name: SnowmanAttack
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1, y: 1, z: 0}
-  ShotDelay: 0.5
+  AttackDelay: 0.3
+  AttackInterval: 2
+  NetAttackAngle: 0
+  SprayInterval: 1
+  SprayRanges:
+  - StartAngle: 90
+    EndAngle: -90
+  - StartAngle: -90
+    EndAngle: 90
   ShotInterval: 0.1
-  ShotAngle: 0
-  NShots: 2
-  ShotSpreadAngle: 0
+  NShots: 19
   ShotPaths:
-  - {fileID: 11400000, guid: 2e1de128f3c213c4db1d2117c96f876f, type: 2}
-  - {fileID: 11400000, guid: edccaf4bfe2c99d468a2af2404247e49, type: 2}
+  - {fileID: 11400000, guid: a32fe55dd19b9c643a93aa70726179c9, type: 2}

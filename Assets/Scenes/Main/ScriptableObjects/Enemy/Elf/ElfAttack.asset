@@ -15,12 +15,16 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  ShotDelay: 0
-  BurstInterval: 0
-  NetBurstAngle: 0
-  ShotInterval: 0
-  ShotAngles: []
-  NShots: 0
-  ShotSpreadAngle: 0
-  ShotPaths: []
+    m_Extent: {x: 1, y: 1, z: 0}
+  AttackDelay: 0.2
+  AttackInterval: 1
+  NetAttackAngle: 0
+  ShotInterval: 0.3
+  ShotAngles:
+  - -90
+  - 90
+  - 0
+  NShots: 3
+  ShotSpreadAngle: 90
+  ShotPaths:
+  - {fileID: 11400000, guid: 7a6407451e063a64195b492c8a3f9f97, type: 2}

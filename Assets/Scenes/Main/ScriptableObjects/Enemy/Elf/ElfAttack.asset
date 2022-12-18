@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0404a069d867f342a2d6cf0311d98df, type: 3}
+  m_Script: {fileID: 11500000, guid: c11f0ffa1f6178d409f7ed7e6f44b450, type: 3}
   m_Name: ElfAttack
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1, y: 1, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
   ShotDelay: 0
-  ShotInterval: 1
-  ShotAngle: 0
-  NShots: 3
-  ShotSpreadAngle: 90
-  ShotPath: {fileID: 0}
+  BurstInterval: 0
+  NetBurstAngle: 0
+  ShotInterval: 0
+  ShotAngles: []
+  NShots: 0
+  ShotSpreadAngle: 0
+  ShotPaths: []

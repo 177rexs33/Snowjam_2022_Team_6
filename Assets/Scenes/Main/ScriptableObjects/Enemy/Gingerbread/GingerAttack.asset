@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0404a069d867f342a2d6cf0311d98df, type: 3}
-  m_Name: SnowmanAttack
+  m_Name: GingerAttack
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
   Hitbox:
@@ -22,5 +22,5 @@ MonoBehaviour:
   NShots: 2
   ShotSpreadAngle: 0
   ShotPaths:
-  - {fileID: 11400000, guid: 2e1de128f3c213c4db1d2117c96f876f, type: 2}
-  - {fileID: 11400000, guid: edccaf4bfe2c99d468a2af2404247e49, type: 2}
+  - {fileID: 11400000, guid: 76f7a267979c624429cfc84ab6f94846, type: 2}
+  - {fileID: 11400000, guid: a2e71fe4d592a3b4a95f7f4162f27ad3, type: 2}

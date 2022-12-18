@@ -101,7 +101,7 @@ namespace SJ22
         void InstantiateShot(ShotProperties shotProperties)
         {
             var shotGO = Instantiate(shotPrefab);
-            shotGO.transform.position = transform.position;
+            shotGO.transform.position = transform.position + (Vector3)shotProperties.Offset;
 
             var shot = shotGO.GetComponent<Shot>();
             shot.Properties = shotProperties;

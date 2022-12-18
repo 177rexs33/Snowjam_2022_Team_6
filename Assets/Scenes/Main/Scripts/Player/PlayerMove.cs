@@ -12,6 +12,7 @@ namespace SJ22
         [SerializeField] GameInputReader inputReader;
         [SerializeField] ScreenProperties screenProperties;
         [SerializeField] float speed;
+        [SerializeField] SpriteRenderer spriteRenderer;
 
         Rigidbody2D rb;
         Vector2 moveDirection;
@@ -24,12 +25,13 @@ namespace SJ22
             inputReader.Gameplay.Move += dir => moveDirection = dir;
 
             startPosition = transform.localPosition;
-            restartFromCheckpointEvent.Event += ResetLocalPosition;
+            restartFromCheckpointEvent.Event += OnRestartFromCheckpoint;
         }
 
-        void ResetLocalPosition()
+        void OnRestartFromCheckpoint()
         {
             transform.localPosition = startPosition;
+            spriteRenderer.enabled = true;
         }
 
         void Update()

@@ -48,7 +48,7 @@ namespace SJ22
         void OnRestart()
         {
             timesToUnpause.ForEach(t => t.Resume());
-            time.Time = lastCheckpoint;
+            time.SetTime(lastCheckpoint);
             transform.position = new Vector3(
                 0, lastCheckpoint * screenProperties.Speed, 0
             );

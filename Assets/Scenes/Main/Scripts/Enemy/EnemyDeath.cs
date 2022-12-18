@@ -14,8 +14,9 @@ namespace SJ22
         {
             if ((playerBullets.value & (1 << collision.transform.gameObject.layer)) > 0)
             {
+                //set animator parameter, play snowball explosion, destory snowball
+                Destroy(collision.gameObject);
                 Die();
-                
             }
         }
 

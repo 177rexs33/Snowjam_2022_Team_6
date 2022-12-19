@@ -442,6 +442,7 @@ GameObject:
   - component: {fileID: 592453607}
   - component: {fileID: 592453608}
   - component: {fileID: 592453609}
+  - component: {fileID: 592453610}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -521,6 +522,21 @@ MonoBehaviour:
   checkpoints: {fileID: 11400000, guid: 47ac31ba981258742baa9f02f5d94e51, type: 2}
   restartFromCheckpointEvent: {fileID: 11400000, guid: 27ca0396b4ac1e64fa483df1ac5bd8a3, type: 2}
   checkpointPrefab: {fileID: 112588687214490311, guid: fcbf50d06ac3a1944b0d25c730253e9f, type: 3}
+--- !u!114 &592453610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592453605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd66af7ee11d834fb6ad1babb8cbec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  targetTime: 40
+  sceneName: Cutscene
 --- !u!1 &763268977
 GameObject:
   m_ObjectHideFlags: 0

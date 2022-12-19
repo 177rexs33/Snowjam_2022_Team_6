@@ -168,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  screenProperties: {fileID: 11400000, guid: 1d23a60c402cd2b4ca9a5d6f1d1e419e, type: 2}
+  playerContainer: {fileID: 11400000, guid: 9169c9936465a9c42a01be1f490d767b, type: 2}
 --- !u!50 &4590003116049324755
 Rigidbody2D:
   serializedVersion: 4

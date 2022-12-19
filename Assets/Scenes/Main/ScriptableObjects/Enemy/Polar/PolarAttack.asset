@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c11f0ffa1f6178d409f7ed7e6f44b450, type: 3}
+  m_Name: PolarAttack
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300000, guid: 7029c571e3ec6924887529722a0b5153, type: 3}
+  Hitbox:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0.25, y: 0.25, z: 0}
+  AttackDelay: 0.5
+  AttackInterval: 1
+  NetAttackAngle: 0
+  ShotInterval: 0
+  ShotAngles:
+  - 0
+  NShots: 3
+  ShotSpreadAngle: 90
+  ShotOffsets:
+  - {x: 3, y: -1}
+  - {x: 0, y: 0}
+  - {x: -3, y: -1}
+  ShotPaths:
+  - {fileID: 11400000, guid: 4c04ed8ba27f49749935f4f75cdab34f, type: 2}

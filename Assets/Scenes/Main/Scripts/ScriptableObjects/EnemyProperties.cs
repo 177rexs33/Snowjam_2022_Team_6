@@ -9,6 +9,7 @@ namespace SJ22
     public class EnemyProperties : ScriptableObject
     {
         public Sprite Sprite;
+        public float Scale = 1f;
         public AnimatorController AnimatorController;
         public Bounds Hitbox;
         public AttackProperties AttackProperties;

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7544c1f2f076c64287476b682ed0325, type: 3}
   m_Name: SnowmanAttack
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 7029c571e3ec6924887529722a0b5153, type: 3}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1, y: 1, z: 0}
+    m_Extent: {x: 0.25, y: 0.25, z: 0}
   AttackDelay: 0.3
   AttackInterval: 2
   NetAttackAngle: 0

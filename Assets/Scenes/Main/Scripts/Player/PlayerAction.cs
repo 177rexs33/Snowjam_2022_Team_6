@@ -10,7 +10,8 @@ namespace SJ22
         {
             Ready,
             Active,
-            Recharging
+            Recharging,
+            Disabled
         }
 
         [SerializeField] GameTime time;
@@ -18,12 +19,15 @@ namespace SJ22
 
         [SerializeField] GameInputReader inputReader;
 
+        [SerializeField] EventSO actionDisabledEvent;
         [SerializeField] EventSO actionReadyEvent;
         [SerializeField] EventSO actionActiveEvent;
         [SerializeField] EventSO actionRechargingEvent;
 
-        [SerializeField] float actionDuration;
-        [SerializeField] float rechargeDuration;
+        [SerializeField] EventSO playerDeathEvent;
+        [SerializeField] EventSO restartFromCheckpointEvent;
+
+        [SerializeField] ActionParameters parameters;
 
         State curState = State.Ready;
         float stateChangeTime;
@@ -31,12 +35,36 @@ namespace SJ22
         void Awake()
         {
             inputReader.Gameplay.Action += OnActionPressed;
+
+            restartFromCheckpointEvent.Event += OnRestartFromCheckpoint;
+            playerDeathEvent.Event += OnPlayerDeath;
+        }
+
+        void OnDestroy()
+        {
+            restartFromCheckpointEvent.Event -= OnRestartFromCheckpoint;
+            playerDeathEvent.Event -= OnPlayerDeath;
+
+        }
+
+        void OnRestartFromCheckpoint()
+        {
+            curState = State.Ready;
+            stateChangeTime = time.Time;
+            actionReadyEvent.Event?.Invoke();
+        }
+
+        void OnPlayerDeath()
+        {
+            curState = State.Disabled;
+            stateChangeTime = time.Time;
+            actionDisabledEvent.Event?.Invoke();
         }
 
         void Update()
         {
             if(curState == State.Active) { 
-                if(time.Time > stateChangeTime + actionDuration)
+                if(time.Time > stateChangeTime + parameters.ActiveDuration)
                 {
                     enemyTime.Resume();
                     curState = State.Recharging;
@@ -46,7 +74,7 @@ namespace SJ22
             }
             else if(curState == State.Recharging)
             {
-                if (time.Time > stateChangeTime + rechargeDuration)
+                if (time.Time > stateChangeTime + parameters.RechargeDuration)
                 {
                     curState = State.Ready;
                     stateChangeTime = time.Time;

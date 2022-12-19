@@ -20,6 +20,8 @@ namespace SJ22
         public int NShots;
         public float ShotSpreadAngle;
 
+        public List<Vector2> ShotOffsets = new List<Vector2>();
+
         public List<ShotPath> ShotPaths;
         public override IEnumerator GenerateShotPattern()
         {
@@ -35,6 +37,11 @@ namespace SJ22
                         {
                             shotPath = ShotPaths[i % ShotPaths.Count];
                         }
+                        Vector2 shotOffset = Vector2.zero;
+                        if(ShotOffsets.Count > 0)
+                        {
+                            shotOffset = ShotOffsets[i % ShotOffsets.Count];
+                        }
                         float theta =
                             -ShotSpreadAngle / 2
                             + (float)i / (NShots - 1)
@@ -45,6 +52,7 @@ namespace SJ22
                             Hitbox = Hitbox,
                             Angle = NetAttackAngle + theta + shotAngle,
                             Path = shotPath,
+                            Offset = shotOffset,
                         };
                     }
                     yield return new Wait(ShotInterval);

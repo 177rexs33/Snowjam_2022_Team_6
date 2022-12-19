@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 777424567276393596}
   shotPrefab: {fileID: 1476131364281127367, guid: ef3af8d640e82db46b2910495e262d35, type: 3}
   Properties: {fileID: 0}
+  ShotContainer: {fileID: 0}
 --- !u!95 &6985150195028343936
 Animator:
   serializedVersion: 5
@@ -167,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 11400000, guid: a257e109cd0198e43bc84b74a03f733e, type: 2}
+  screenProperties: {fileID: 11400000, guid: 1d23a60c402cd2b4ca9a5d6f1d1e419e, type: 2}
+  playerContainer: {fileID: 11400000, guid: 9169c9936465a9c42a01be1f490d767b, type: 2}
 --- !u!50 &4590003116049324755
 Rigidbody2D:
   serializedVersion: 4

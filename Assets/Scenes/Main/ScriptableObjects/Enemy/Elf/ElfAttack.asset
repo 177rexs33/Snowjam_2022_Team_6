@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11f0ffa1f6178d409f7ed7e6f44b450, type: 3}
   m_Name: ElfAttack
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: b5e3f54b9bdd6ce41a0e845951973e70, type: 3}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1, y: 1, z: 0}
+    m_Extent: {x: 0.3, y: 0.3, z: 0}
   AttackDelay: 0.2
   AttackInterval: 1
   NetAttackAngle: 0

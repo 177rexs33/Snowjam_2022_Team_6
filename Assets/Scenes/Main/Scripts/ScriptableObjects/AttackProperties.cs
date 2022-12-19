@@ -10,6 +10,7 @@ namespace SJ22
         public Bounds Hitbox;
         public float Angle;
         public ShotPath Path;
+        public Vector2 Offset = Vector2.zero;
     }
 
     public abstract class AttackProperties : ScriptableObject

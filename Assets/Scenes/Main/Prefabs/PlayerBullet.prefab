@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90f92d096f8c234d8e48f645f8e22df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
   bullet: {fileID: 2839784740180424450}
   time: {fileID: 11400000, guid: 525f92129a8de1d4184369d3f4aea0f9, type: 2}
   screenProperties: {fileID: 11400000, guid: 1d23a60c402cd2b4ca9a5d6f1d1e419e, type: 2}

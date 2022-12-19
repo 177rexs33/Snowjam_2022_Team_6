@@ -6,20 +6,32 @@ using UnityEngine.Windows;
 
 namespace SJ22
 {
-    class EnemyPosition
+    class EnemyPathWaypoint
     {
         public Vector2 Position;
         public float WaitTime = 0f;
     }
 
-    class EnemyPositionEnd { }
+
+    public enum EnemyPathFlagEnum
+    {
+        End,
+        Charge,
+        FollowScreen,
+    }
+
+    public class EnemyPathFlag
+    {
+        public EnemyPathFlagEnum Flag;
+        public float? Time = null;
+    }
 
     class EnemySpawn
     {
         public float Time;
         public EnemyProperties Properties;
         public float Speed;
-        // Object is either Vector2 or EnemyEnd
+        // Object is either EnemyPosition or EnemyPositionFlag
         public List<object> Path;
     }
 
@@ -112,10 +124,15 @@ namespace SJ22
             text = text.Replace("\r\n", "\n");
             var lines = text.Split('\n');
             Regex lineRx = new Regex(
-                @"(?<time>[-\d.]+): *(?<enemy>\w+), (?<speed>[-\d.]+),(?<positions> (?:end|\([-\d.]+, *[-\d.]+\)(?::[\d.]+)?))+"
+                @"(?<time>[-\d.]+): *(?<enemy>\w+), (?<speed>[-\d.]+),(?<positions> (?:[\w_]+|\([-\d.]+, *[-\d.]+\))(?::[\d.]+)?)+",
+                RegexOptions.Compiled
             );
             Regex positionRx = new Regex(
-                @"\((?<x>[-\d.]+), *(?<y>[-\d.]+)\)(?::(?<wait>[-\d.]+))?"
+                @"\((?<x>[-\d.]+), *(?<y>[-\d.]+)\)(?::(?<wait>[-\d.]+))?",
+                RegexOptions.Compiled
+            );
+            Regex flagRx = new Regex(
+                @"^ *(?<flag>[\w_]+)(?::(?<time>[-\d.]+))?$"
             );
             int lineNum = 0;
             foreach(var line in lines)
@@ -162,9 +179,38 @@ namespace SJ22
                 List<object> positions = new List<object>();
                 foreach(Capture capture in lineMatch.Groups["positions"].Captures)
                 {
-                    if(capture.Value.EndsWith("end"))
+                    var flagMatch = flagRx.Match(capture.Value);
+                    if (flagMatch.Success)
                     {
-                        positions.Add(new EnemyPositionEnd());
+                        EnemyPathFlag pathFlag = new EnemyPathFlag();
+                        var flagStr = flagMatch.Groups["flag"].Value;
+                        if (flagStr == "end")
+                        {
+                            pathFlag.Flag = EnemyPathFlagEnum.End;
+                        }
+                        else if (flagStr == "followscreen")
+                        {
+                            pathFlag.Flag = EnemyPathFlagEnum.FollowScreen;
+                        }
+                        else if (flagStr == "charge")
+                        {
+                            pathFlag.Flag = EnemyPathFlagEnum.Charge;
+                        }
+                        else
+                        {
+                            LogWarning();
+                            continue;
+                        }
+
+                        if (flagMatch.Groups["time"].Success)
+                        {
+                            pathFlag.Time = float.Parse(
+                                flagMatch.Groups["time"].Value
+                            );
+                        }
+                        positions.Add(
+                            pathFlag
+                        );
                         continue;
                     }
 
@@ -174,7 +220,7 @@ namespace SJ22
                     }
 
                     positions.Add(
-                        new EnemyPosition
+                        new EnemyPathWaypoint
                         {
                             Position = new Vector2(
                                 float.Parse(positionMatch.Groups["x"].Value),

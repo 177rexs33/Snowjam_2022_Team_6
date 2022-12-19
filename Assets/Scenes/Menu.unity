@@ -184,7 +184,7 @@ MonoBehaviour:
   m_text: Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
-  m_sharedMaterial: {fileID: -694261096782468721, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
+  m_sharedMaterial: {fileID: -5618789227235762101, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
-  m_sharedMaterial: {fileID: -694261096782468721, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
+  m_sharedMaterial: {fileID: -5618789227235762101, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_text: Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
-  m_sharedMaterial: {fileID: -694261096782468721, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
+  m_sharedMaterial: {fileID: -5618789227235762101, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7894e8db3661f4247aa3ce419416b89c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee25ff77b6983314da07061353dd2ce5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1239,7 +1239,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
-  m_sharedMaterial: {fileID: -694261096782468721, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
+  m_sharedMaterial: {fileID: -5618789227235762101, guid: f5fdd113c8b8ae54e9e23a46fa0e024a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

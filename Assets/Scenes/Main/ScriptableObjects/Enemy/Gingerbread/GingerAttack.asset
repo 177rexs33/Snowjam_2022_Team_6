@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0404a069d867f342a2d6cf0311d98df, type: 3}
   m_Name: GingerAttack
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 21300000, guid: 5309e08cb3fb45d47a84964ec3c0136f, type: 3}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1, y: 1, z: 0}

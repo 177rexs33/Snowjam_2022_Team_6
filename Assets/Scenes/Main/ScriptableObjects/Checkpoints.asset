@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Checkpoints
   m_EditorClassIdentifier: 
   Timepoints:
-  - 4
+  - 8
+  - 16
+  - 16
+  - 29

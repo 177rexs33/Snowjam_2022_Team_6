@@ -5,8 +5,8 @@
 10: elf, 11, (15, 13) (-6, 12):1.5 (-4, 3):1.5 (5, 8):3 (8, 16) end
 10: elf, 11, (-7, 12) (3, 7):1.5 (-2, 3):1.5 (3, 10):3 (3, 15) end
 
-18: tree, 2, (1, 15) followscreen
-18: tree, 2, (-1, 15) followscreen
+18: tree, 2, (-4, 15) followscreen
+18: tree, 2, (4, 15) followscreen
 
 
 20: gingerbread, 8, (-6, 12.5) (-5, 9)

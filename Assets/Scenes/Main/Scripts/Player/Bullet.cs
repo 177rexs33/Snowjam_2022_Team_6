@@ -6,7 +6,7 @@ namespace SJ22
 {
     public class Bullet : MonoBehaviour
     {
-        private float speed = 10f;
+        [SerializeField] float speed = 10f;
         [SerializeField] GameObject bullet;
         [SerializeField] GameTime time;
         [SerializeField] ScreenProperties screenProperties;

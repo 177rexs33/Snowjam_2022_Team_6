@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Gingerbread
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: f0a7405f2b45c2748956a06e5f0cf76d, type: 3}
+  Scale: 1
   AnimatorController: {fileID: 9100000, guid: e4c2df4cc0ce46a41a4df8e7e0d046af, type: 2}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1, y: 1, z: 0}
-  AttackProperties: {fileID: 11400000, guid: d9ac5f5f56167484d9822f6f98fb47bc, type: 2}
+  AttackProperties: {fileID: 11400000, guid: 97c4501cb76154a448301345ced0934d, type: 2}

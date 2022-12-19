@@ -238,10 +238,10 @@ RectTransform:
   m_Father: {fileID: 2086420617}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 19.2, y: -19.2}
-  m_SizeDelta: {x: 0, y: 38.4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 38.4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &74568659
 Animator:
@@ -500,7 +500,7 @@ MonoBehaviour:
   enemyDatabase: {fileID: 11400000, guid: 82da4fa93178f6044bc54e6534716e8b, type: 2}
   shotContainer: {fileID: 768658657}
   enemyPrefab: {fileID: 777424567276393584, guid: 1dc9df96b106f5d4cbfb4b5dd2005d7e, type: 3}
-  script: {fileID: 4900000, guid: 5df1989ffde171f4dbc48bdf69c39b33, type: 3}
+  script: {fileID: 4900000, guid: 4c83a549dfd59984db2bb90df94ee568, type: 3}
 --- !u!114 &592453609
 MonoBehaviour:
   m_ObjectHideFlags: 0

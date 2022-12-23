@@ -10,7 +10,6 @@ namespace SJ22
         [SerializeField] EventSO restartFromCheckpointEvent;
 
         [SerializeField] new BoxCollider2D collider;
-        [SerializeField] SpriteRenderer spriteRenderer;
 
         [SerializeField] GameObject shotPrefab;
 
@@ -39,24 +38,16 @@ namespace SJ22
 
         void Start()
         {
-            if (spriteRenderer != null && Properties.Sprite != null)
-            {
-                spriteRenderer.sprite = Properties.Sprite;
-                transform.localScale = new Vector3(
-                    Properties.Scale,
-                    Properties.Scale,
-                    1f
-                );
-            }
             collider.size = Properties.Hitbox.size / Properties.Scale;
             collider.offset = Properties.Hitbox.center;
 
             shotEnumerator = Properties.AttackProperties.GenerateShotPattern();
 
-            if (Properties.AnimatorController != null)
+            if (Properties.SpritePrefab != null)
             {
-                GetComponent<Animator>().runtimeAnimatorController = Properties.AnimatorController;
-
+                var spritePrefab = Instantiate(Properties.SpritePrefab);
+                spritePrefab.transform.SetParent(transform);
+                spritePrefab.transform.localPosition = Vector3.zero;
             }
         }
 

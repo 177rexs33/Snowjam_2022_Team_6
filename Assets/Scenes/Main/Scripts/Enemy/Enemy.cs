@@ -38,7 +38,7 @@ namespace SJ22
 
         void Start()
         {
-            collider.size = Properties.Hitbox.size / Properties.Scale;
+            collider.size = Properties.Hitbox.size;
             collider.offset = Properties.Hitbox.center;
 
             shotEnumerator = Properties.AttackProperties.GenerateShotPattern();

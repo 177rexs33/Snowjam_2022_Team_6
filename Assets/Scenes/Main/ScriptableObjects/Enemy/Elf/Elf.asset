@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5d948c363e8446bdee8925d7c2a94, type: 3}
   m_Name: Elf
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 06e7082e078d018478bc1175e385880b, type: 3}
   Scale: 1
-  AnimatorController: {fileID: 9100000, guid: 3d30355a0da3b9948bffb4543d655892, type: 2}
+  SpritePrefab: {fileID: 4707513830677006856, guid: 9cbb3146fc962e346b1d8496ddba79d4, type: 3}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1, y: 1, z: 0}

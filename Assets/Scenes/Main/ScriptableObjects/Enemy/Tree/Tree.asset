@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15e5d948c363e8446bdee8925d7c2a94, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 08527ab1061b79a43bba7bf0d1291323, type: 3}
-  Scale: 0.5
-  AnimatorController: {fileID: 0}
+  Scale: 0.25
+  SpritePrefab: {fileID: 4707513830677006856, guid: 520aad16adc725743ba5d4a4e435bd0f, type: 3}
   Hitbox:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 1, y: 1, z: 0}

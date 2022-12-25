@@ -16,7 +16,7 @@ namespace SJ22
             timeGroup.GameTimes.ForEach(t => {
                 t.Resume();
                 t.ResetScale();
-                t.SetTime(Time.time);
+                t.SetTime(0);
             });
         }
 
